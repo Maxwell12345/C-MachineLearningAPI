@@ -16,7 +16,7 @@
 
 //Any Global variables u need to make goes here
 typedef enum : NSUInteger {
-    
+   HI
 }DefinedFinalValues;
 
 #endif /* Globals_h */
