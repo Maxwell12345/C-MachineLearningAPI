@@ -3,7 +3,7 @@
 A completely from scratch C++ developed AI predicts the output of a given set of specific inputs.  
 
 
-=======================================================================================
+======================================================================================
 
 
 If and ONLY if two inputs are true(1), then the output is true(1)
