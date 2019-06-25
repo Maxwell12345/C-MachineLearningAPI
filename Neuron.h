@@ -10,6 +10,10 @@
 #define Neuron_h
 #include "Globals.h"
 
+//
+//This just defines the whole neural network
+//
+
 //Use in a layer class
 class Neuron{
 private:
@@ -17,6 +21,14 @@ private:
     float activatedVal;
 public:
     Neuron(float val);
+    /*Creates exicute system for every Neuron
+     
+     Neuron::Neuron(float val){
+        this->initVal = val;
+        activationFunc();
+     }Neuron *n1 = new Neuron("Whatever val is needed");
+     
+     */
     
     void activationFunc(void){ this->activatedVal = tanhf(this->initVal); }
     
@@ -42,9 +54,34 @@ public:
 
 class NodeLayers{
 private:
-    Node *n;
+    /*
+     e.g.
+     layerInitWeights[neuron #][weight #]
+     */
+    std::vector<std::vector<float>> layerInitWeights;
+    std::vector<std::vector<float>> layerDerivedWeights;
+    
+    //Final Output
+    std::vector<std::vector<float>> layerWeightedOutp;
     
 public:
+    std::vector<float> initWeightTempHold;
+    std::vector<float> derivativeWeightTempHold;
+    std::vector<float> weightedOutpTempHold;
+    //In the net header use the Node struct to set and init each of the things
+    void setInitWeights(void);
+    void setDerivedWeights(void);
+    void setweightedOutputs(void);
+    
+    float getLayerInitWeight(int neuron, int weight){
+        return this->layerInitWeights[neuron][weight];
+    };
+    float getLayerDerivedWeight(int neuron, int weight){
+        return this->layerDerivedWeights[neuron][weight];
+    };
+    float getLayerWeightedOutp(int neuron, int weight){
+        return this->layerWeightedOutp[neuron][weight];
+    };
     
 };
 
