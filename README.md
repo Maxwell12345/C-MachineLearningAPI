@@ -14,28 +14,55 @@ Therefore, if there is more than two true’s(1’s) or less than two true’s(1
 
 EX:  (This doesn’t include every single possible outp and inp)
 
-Inputs:	    	Outputs:
+Inputs: 1 0 1 0
 
-1 0 1 0		    1
-
-1 1 0 0	    	1
-
-0 0 1 1	    	1
-    
-0 1 0 1	    	1
-
-1 0 0 1	    	1
+Output: 1
 
 
-0 0 0 1	    	0
+Inputs: 1 1 0 0	
 
-1 1 1 0	    	0
+Output: 1
 
-0 0 0 0   		0
 
-0 1 1 1		    0
+Inputs: 0 0 1 1	
 
-1 1 1 1		    0
+Output: 1
+
+
+Inputs: 0 1 0 1	
+
+Output: 1
+
+
+Inputs: 1 0 0 1	
+
+Output: 1
+
+
+
+Inputs: 1 0 1 1
+
+Output: 0
+
+
+Inputs: 0 1 0 1	
+
+Output: 0
+
+
+Inputs: 0 0 0 1
+
+Output: 0
+
+
+Inputs: 1 1 1 0		
+
+Output:0
+
+
+Inputs: 0 0 0 0
+
+Output: 0
 
 
 Made by Vici vic dawg and kim jong max
