@@ -6,5 +6,11 @@
 //  Copyright © 2019 organized-organization. All rights reserved.
 //
 
-#include "Net.hpp"
 #include "Globals.h"
+#include "Neuron.h"
+#include "Back_Propogation.h"
+
+//This is when all the layers come together to make the foundation of the forward propogation
+class Matrix{
+    
+};
