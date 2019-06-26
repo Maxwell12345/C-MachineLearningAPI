@@ -8,7 +8,11 @@
 
 #ifndef Neuron_h
 #define Neuron_h
-#include "Globals.h"
+
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <stdlib.h>
 
 //
 //This just defines the whole neural network
@@ -37,16 +41,7 @@ public:
 };
 
 class NeuronLayer{
-private:
-    std::vector<std::vector<float>> layerInitVals;
-    std::vector<std::vector<float>> layerActivatedVals;
     
-public:
-    std::vector<float> initValsTempHold;
-    std::vector<float> activatedValTempHold;
-    
-    void setInitVals(void);
-    void setActivatedVals(void);
 };
 
 typedef struct{
