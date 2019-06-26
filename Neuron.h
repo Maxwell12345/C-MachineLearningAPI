@@ -22,6 +22,7 @@
 class Neuron{
 private:
     float initVal;
+    //Uses tanhf func
     float activatedVal;
 public:
     Neuron(float val);
@@ -41,7 +42,18 @@ public:
 };
 
 class NeuronLayer{
+private:
+    std::vector<float> layerInitVals;
+    std::vector<float> layerActivatedVals;
+public:
+    //This feeds into the add() function
+    std::vector<float> getWeights;
     
+    void setInitVals(int setNum, int layer);
+    void setActivatedVals(void);
+    
+    float getInitVal(int neuron){ return this->layerInitVals[neuron]; }
+    float getAcgtivatedVal(int neuron){ return this->layerActivatedVals[neuron]; }
 };
 
 typedef struct{
