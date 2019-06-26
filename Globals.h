@@ -15,8 +15,14 @@
 #include <ctime>
 
 //Any Global variables u need to make goes here
-typedef enum : NSUInteger {
-   HI
-}DefinedFinalValues;
+float setRand(void){
+    if ((arc4random() % 10000) % 2 == 0) {
+        return (float)(arc4random() % 10000) / 10000.000000;
+    }
+    else {
+        return ((float)(arc4random() % 10000) / 10000.000000) * -1;
+    }
+}
+#define random setRand()
 
 #endif /* Globals_h */
