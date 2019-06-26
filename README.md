@@ -47,7 +47,7 @@ Output: 0
 
 Inputs: 0 1 0 1	
 
-Output: 0
+Output: 1
 
 
 Inputs: 0 0 0 1
