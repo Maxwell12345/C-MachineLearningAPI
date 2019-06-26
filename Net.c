@@ -78,40 +78,53 @@ Neuron::Neuron(float val){
     activationFunc();
 }
 
-void NeuronLayer::setInitVals(int setNum, int layer){
+//this is the func procedure to get the activated vals
+Neuron **neuron;
+
+void NeuronLayer::setVals(int setNum, int layer){
     switch (layer) {
         case 1:
             //Input Layer
+            neuron = (Neuron **)malloc(sizeof(Neuron *) * Input_Neuron_Layer_Size);
             for (int i = 0; i < Input_Neuron_Layer_Size; i += 1) {
                 this->layerInitVals.push_back(inputData[setNum][i]);
+                
+                //Free neuron once used
+                neuron[i] = new Neuron(this->layerInitVals[i]);
             }
             break;
         case 2:
             //Hidden Layer 1
+            neuron = (Neuron **)malloc(sizeof(Neuron *) * Hidden_Neuron_Layer_Size_One);
             for (int j = 0; j < Hidden_Neuron_Layer_Size_One; j += 1) {
                 NodeLayers hidden1;
                 //^ Im gonna change it later to a global static obj pointer(This is a prototype)
                 for (int i = 0; i < Input_Neuron_Layer_Size; i += 1) {
-                    this->getWeights.push_back(hidden1.getLayerWeightedOutp(i, j));
-                } this->layerInitVals.push_back(add(this->getWeights));
+                    this->setWeights.push_back(hidden1.getLayerWeightedOutp(i, j));
+                } this->layerInitVals.push_back(add(this->setWeights));
+                neuron[j] = new Neuron(this->layerInitVals[j]);
             }
             break;
         case 3:
             //Hidden Layer 2
+            neuron = (Neuron **)malloc(sizeof(Neuron *) * Hidden_Neuron_Layer_Size_Two);
             for (int j = 0; j < Hidden_Neuron_Layer_Size_Two; j += 1) {
                 for (int i = 0; i < Hidden_Neuron_Layer_Size_One; i += 1) {
                     NodeLayers hidden2;
-                    this->getWeights.push_back(hidden2.getLayerWeightedOutp(i, j));
-                } this->layerInitVals.push_back(add(this->getWeights));
+                    this->setWeights.push_back(hidden2.getLayerWeightedOutp(i, j));
+                } this->layerInitVals.push_back(add(this->setWeights));
+                neuron[j] = new Neuron(this->layerInitVals[j]);
             }
             break;
         case 4:
             //Output Layer
+            neuron = (Neuron **)malloc(sizeof(Neuron *) * Output_Neuron_Layer_Size);
             for (int j = 0; j < Output_Neuron_Layer_Size; j += 1) {
                 for (int i = 0; i < Hidden_Neuron_Layer_Size_Two; i += 1) {
                     NodeLayers output;
-                    this->getWeights.push_back(output.getLayerWeightedOutp(i, j));
-                } this->layerInitVals.push_back(add(this->getWeights));
+                    this->setWeights.push_back(output.getLayerWeightedOutp(i, j));
+                } this->layerInitVals.push_back(add(this->setWeights));
+                neuron[j] = new Neuron(this->layerInitVals[j]);
             }
         default:
             std::cout << "Error, in case value \"setInitVals\" function" << std::endl;
