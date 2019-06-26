@@ -36,6 +36,19 @@ public:
     float getActivatedVal(void){ return this->activatedVal; }
 };
 
+class NeuronLayer{
+private:
+    std::vector<std::vector<float>> layerInitVals;
+    std::vector<std::vector<float>> layerActivatedVals;
+    
+public:
+    std::vector<float> initValsTempHold;
+    std::vector<float> activatedValTempHold;
+    
+    void setInitVals(void);
+    void setActivatedVals(void);
+};
+
 typedef struct{
 private:
     float initWeight;
