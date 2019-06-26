@@ -8,8 +8,20 @@
 
 #ifndef Net_hpp
 #define Net_hpp
+#include "Net.cpp"
 #include "Globals.h"
-#include "Neuron.h"
-#include "Back_Propogation.h"
+
+Neuron::Neuron(float val){
+    this->initVal = val;
+    activationFunc();
+}
+
+void NodeLayers::setInitWeights(){
+    
+}
+
+void NodeLayers::setDerivedWeights(){
+    
+}
 
 #endif /* Net_hpp */
