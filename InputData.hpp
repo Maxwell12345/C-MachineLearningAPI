@@ -1,4 +1,3 @@
-#include <vector>
 #include <iostream>
 
 float input_data[17][4] = {
