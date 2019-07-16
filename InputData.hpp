@@ -1,3 +1,6 @@
+#ifndef _INPUTDATA_HPP_
+#define _INPUTDATA_HPP_
+
 #include <iostream>
 
 float input_data[17][4] = {
@@ -38,3 +41,4 @@ float expected_outputs[17] = {
     0,
     0
 };
+#endif
