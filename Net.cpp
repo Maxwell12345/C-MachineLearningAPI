@@ -32,7 +32,7 @@ class Neuron{
 public:
     Neuron(std::vector<float> inps, bool isRandom, uint32_t nextLayerSize);
     explicit Neuron(std::vector<float> inps){ setInps(inps); }
-    ~Neuron();
+    ~Neuron(void);
     inline void setActivatedVal(std::vector<float> inps){ this->m_activatedVal = tanhf(add(inps)); }
     float getActivatedVal(void){ return this->m_activatedVal; }
 
